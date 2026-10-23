@@ -58,7 +58,7 @@ understand patterns and relationships in the data. import pandas as pd
     print(df.duplicated().sum())
 
 
-    df = df.drop_duplicates()
+    df = df.drop_duplicates()  
 
 
     print("\nDataset after removing duplicates:")
