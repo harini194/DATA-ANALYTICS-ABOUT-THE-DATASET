@@ -1,149 +1,76 @@
 # DATA-ANALYTICS-ABOUT-THE-DATASET
-
-## AIM
-
+# AIM
 To perform data analytics on a given dataset using Python and Pandas, understand the characteristics of the dataset, identify different types of data, examine missing values, and prepare the dataset for further analysis and machine learning.
+# THEORY
+Data Analytics is the process of examining, cleaning, transforming, and interpreting data to obtain useful information and identify
+meaningful patterns. It is an important step before applying statistical methods or Machine Learning algorithms.
+Python provides several libraries for data analysis, among which Pandas is widely used for handling structured datasets. Pandas provides a
+DataFrame structure that allows users to easily load, inspect, clean, and analyze data.
+The main steps involved in dataset analysis are:
+Loading the Dataset – The dataset can be imported using Pandas functions such as read_csv(). Understanding the Dataset – The number of
+rows, columns, column names, and data types can be identified. Checking Missing Values – Missing or null values are detected using
+functions such as isnull(). Statistical Analysis – Functions such as describe() provide statistical information about numerical data. Data
+Cleaning – Duplicate records and missing values can be removed or replaced. Data Visualization – Graphs and charts can be used to
+understand patterns and relationships in the data. import pandas as pd
+## PROCEDURE
+    1.Import the Pandas library to work with the dataset.
+    2.Load the dataset using pd.read_csv() and store it in a DataFrame.
+    3.Display the first five records using head().
+    4.Display the shape of the dataset using shape.
+    5.Display the column names using columns.
+    6.Display the data types of each column using dtypes.
+    7.Display complete dataset information using info().
+    8.Display the statistical summary using describe().
+    9.Check for missing values using isnull().sum().
+    10.Check for duplicate rows using duplicated().sum().
+    11.Remove duplicate rows using drop_duplicates().
+    12.Display the dataset after removing duplicates.
+## CODE
+    from google.colab import drive
+    drive.mount('/content/drive')
+    import pandas as pd
+    df = pd.read_csv('/content/drive/My Drive/Data.csv')
+    df.head()
+    print("\nDataset Shape:")
+    print(df.shape)
 
-## INTRODUCTION
 
-Data Analytics is the process of examining, cleaning, transforming, and interpreting data to discover useful information, patterns, trends, and relationships.
+    print("\nColumn Names:")
+    print(df.columns)
 
-A dataset generally consists of:
 
-- **Rows:** Individual observations or records.
-- **Columns:** Attributes or features describing each record.
-- **Numerical Data:** Data represented using numbers.
-- **Categorical Data:** Data represented using categories or labels.
+    print("\nData Types:")
+    print(df.dtypes)
 
-In this experiment, the dataset contains information about customers and their purchasing behavior. The four attributes are:
 
-| Attribute | Description |
-|---|---|
-| Country | India|
-| Age | 24 |
-| Salary | 100,000/- |
-| Purchased | Yes |
+    print("\nDataset Information:")
+    df.info()
 
-The dataset contains **10 records and 4 columns**.
-## THEORY
+    print("\nStatistical Summary:")
+    print(df.describe())
 
-### 1. What is Data Analytics?
 
-Data Analytics is the systematic process of collecting, examining, cleaning, transforming, and interpreting data to obtain meaningful information and identify useful patterns, trends, and relationships.
+    print("\nMissing Values:")
+    print(df.isnull().sum())
 
-The general data analytics workflow is:
 
-**Data Collection → Data Understanding → Data Cleaning → Data Transformation → Data Analysis → Interpretation**
+    print("\nDuplicate Rows:")
+    print(df.duplicated().sum())
 
-For example, an e-commerce company may collect customer information such as **Country, Age, Salary, and Purchase Status**. By analyzing these attributes, the company can identify customer purchasing patterns and understand the factors that may influence purchasing decisions.
 
-## 2. Dataset
+    df = df.drop_duplicates()
 
-A dataset is a structured collection of related data organized into **rows and columns**. Datasets are widely used in data analytics, data science, machine learning, artificial intelligence, and research.
 
-In this experiment, the dataset contains customer-related information such as:
+    print("\nDataset after removing duplicates:")
+    print(df.head())
 
-- Country
-- Age
-- Salary
-- Purchased
+ ## OUTPUT
+ <img width="660" height="681" alt="image" src="https://github.com/user-attachments/assets/a7aace4d-8166-452a-8a4f-2f5c97fc2b0f" />
+<img width="411" height="522" alt="image" src="https://github.com/user-attachments/assets/46b56ad3-7db8-4e66-ac54-5b09b94c665d" />
 
-### 3. Dataset Characteristics
-
-| Property | Value |
-|---|---|
-| Number of Records | 10 |
-| Number of Attributes | 4 |
-| Categorical Attributes | Country, Purchased |
-| Numerical Attributes | Age, Salary |
-
-## 4. Types of Datasets
-
-### 4.1 Publicly Available Dataset
-
-A publicly available dataset is a collection of data made accessible to students, researchers, developers, and the general public. These datasets can be downloaded or accessed online for analysis and research.
-
-Public datasets are commonly used for:
-
-- Data Analytics
-- Data Science
-- Machine Learning
-- Artificial Intelligence
-- Research
-- Academic Laboratory Experiments
-
-Common dataset formats include:
-
-- CSV
-- Excel
-- JSON
-- XML
-- Text
-- Images
-- Audio
-
-**Examples of Public Dataset Sources:**
-
-- UCI Machine Learning Repository
-- Kaggle
-- Government Open Data Portals
-- Google BigQuery Public Datasets
-- India's Open Government Data Platform (data.gov.in)
-
-Public datasets are useful because they allow students and researchers to practice data analysis without collecting data manually.
-
-### 4.2 Real-Time Dataset
-
-A real-time dataset contains data that is continuously generated or collected from real-world systems. The data is made available for processing and analysis immediately or with very little delay.
-
-Real-time data is commonly generated by:
-
-- Sensors
-- IoT devices
-- Mobile applications
-- GPS devices
-- Smart meters
-- Websites
-- Financial systems
-- Medical devices
-
-**Examples of Real-Time Data:**
-
-- **Smart Traffic:** Vehicle speed, vehicle count, traffic density, and vehicle location.
-- **Smart Grid:** Electricity consumption, voltage, current, and power usage.
-- **Healthcare:** Heart rate, blood pressure, body temperature, and oxygen level.
-- **Weather Monitoring:** Temperature, humidity, rainfall, and wind speed.
-- **Banking:** Financial transactions, payments, and account activity.
-- **E-Commerce:** Customer clicks, product views, orders, and purchases.
-
-## 5. Python and Pandas
-
-Python provides several powerful libraries for data analytics. One of the most widely used libraries is **Pandas**, which provides data structures and functions for manipulating and analyzing structured data.
-
-Typical operations performed using Pandas include:
-
-- Loading datasets
-- Inspecting dataset structure
-- Identifying data types
-- Detecting missing values
-- Cleaning data
-- Filtering records
-- Performing statistical analysis
-- Preparing data for machine learning
-
-**Example:**
-
-```python
-import pandas as pd
-
-dataset = pd.read_csv("Data.csv")
-
-print(dataset.head())
-print(dataset.shape)
-print(dataset.info())
-print(dataset.isnull().sum())
-```
 
 ## RESULT
-
-Thus, the dataset and fundamental **data analytics concepts** were studied successfully using **Python and Pandas**. The characteristics of the dataset, different types of data, publicly available datasets, real-time datasets, and their applications were analyzed. The given dataset was examined based on its structure, attributes, data types, and missing values, and its suitability for further **data analysis and machine learning** was understood.
+Thus, data analytics was successfully performed on the given dataset using Python and Pandas. The characteristics, structure, dimensions,
+data types, missing values, and duplicate records of the dataset were identified.
+The dataset was successfully examined and cleaned, making it suitable for further data analysis, visualization, and Machine Learning
+applications.
